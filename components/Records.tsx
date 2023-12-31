@@ -38,6 +38,7 @@ const Recorder: React.FC = () => {
       const screenStream = await navigator.mediaDevices.getDisplayMedia({
         video: true,
       });
+      console.log("Screen sharing stream:", screenStream);
       const combinedStream = new MediaStream([
         ...(mediaStream?.getTracks() || []),
         ...screenStream.getTracks(),
@@ -93,7 +94,7 @@ const Recorder: React.FC = () => {
   return (
     <div>
       <video ref={videoRef} width="400" height="300" />
-      <div>
+      <div className="flex items-center justify-center gap-x-4">
         <button onClick={startRecording}>Start Recording</button>
         <button onClick={stopRecording}>Stop Recording</button>
         <button onClick={handleScreenShare}>Share Screen</button>
