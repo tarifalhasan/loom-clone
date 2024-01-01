@@ -1,4 +1,4 @@
-// Import React and other necessary modules
+"use client";
 import React, { useRef, useState } from "react";
 
 // Define the Recorder component
